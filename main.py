@@ -9,7 +9,7 @@ import os
 from dotenv import load_dotenv
 
 # Openai
-import openai
+#import openai | probably don't need
 
 # Langchain
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -43,8 +43,10 @@ def main():
 
     pdf = st.file_uploader("Upload your PDF", type="pdf")
 
-    
-    # TODO
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+
+    # TODO - Need to test / Too tired
+    texts = text_splitter.split_documents(pdf)
 
     llm = ChatOpenAI(
         openai_api_key = os.getenv("OPENAI_API_KEY"),
@@ -57,7 +59,7 @@ def main():
     persist_directory = 'db'
 
     vectordb = Chroma.from_documents(
-        documents = texts, # big TODO - Need to connect submitted pdf to texts
+        documents = texts, # TODO - Need to test / Too tired
         embedding = embedding,
         persist_directory = persist_directory
     )
@@ -97,7 +99,7 @@ def main():
         system_message=sys_msg,
         tools=tools
     )
-    
+
     conversational_agent.agent.llm_chain.prompt = prompt
 
 
