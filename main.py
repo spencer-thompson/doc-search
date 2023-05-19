@@ -1,7 +1,7 @@
 '''
 Usage via terminal: streamlit run main.py
 
-Haven't tested anything yet at all.
+Haven't tested anything yet at all. Having some weird issues.
 '''
 
 
