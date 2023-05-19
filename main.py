@@ -1,6 +1,7 @@
 '''
 Usage via terminal: streamlit run main.py
 
+Haven't tested anything yet at all.
 '''
 
 
@@ -13,6 +14,7 @@ import openai
 # Langchain
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
+# Streamlit
 import streamlit as st
 
 
