@@ -73,7 +73,7 @@ def main():
     tools = [Tool(
         func = retriever.run,
         description = "Use this tool to answer Any question, This tool can also be used for follwo up questions from the user.",
-        name = 'Lex Fridman DB'
+        name = 'PDF DB'
     )]
 
     memory = ConversationBufferWindowMemory(
