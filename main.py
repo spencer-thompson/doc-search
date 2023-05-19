@@ -18,14 +18,18 @@ import streamlit as st
 
 
 
-load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 
 def main():
-    pass
+    load_dotenv()
+    openai.api_key = os.getenv("OPENAI_API_KEY")
 
+    st.set_page_config(page_title = "My webpage", page_icon = ":tada:", layout = "wide")
+    
+    st.header("Ask your PDF 💬")
+
+    pdf = st.file_uploader("Upload your PDF", type="pdf")
 
 if __name__ == "__main__":
     main()
